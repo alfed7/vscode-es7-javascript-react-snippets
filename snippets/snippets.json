@@ -622,6 +622,34 @@
     ],
     "description": "Creates a React component class with PropTypes with connected redux and ES7 module system"
   },
+  "reactArrowFunctionReduxPropTypes": {
+    "prefix": "rafreduxp",
+    "body": [
+      "import React from 'react'",
+      "import PropTypes from 'prop-types'",
+      "import { connect } from 'react-redux'",
+      "",
+      "const ${1:${TM_FILENAME_BASE}} = props => {",
+      "\treturn (",
+      "\t\t<div>",
+      "\t\t\t$0",
+      "\t\t</div>",
+      "\t)",
+      "}",
+      "",
+      "const mapStateToProps = (state) => ({",
+      "\t",
+      "})",
+      "",
+      "const mapDispatchToProps = {",
+      "\t",
+      "}",
+      "",
+      "export default connect(mapStateToProps, mapDispatchToProps)(${1:${TM_FILENAME_BASE}})",
+      ""
+    ],
+    "description": "Creates a React arrow function with PropTypes with connected redux and ES7 module system"
+  },
   "mappingToProps": {
     "prefix": "reduxmap",
     "body": [
