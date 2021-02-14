@@ -203,6 +203,31 @@ const $1 = () => {
 export default $1
 ```
 
+### `rafreduxp`
+
+```javascript
+import React from 'react'
+import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
+
+const $1 = props => {
+  return <div>$0</div>
+}
+
+$1.propTypes = {
+
+}
+
+const mapStateToProps = (state) => ({
+})
+
+const mapDispatchToProps = {
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)($1)
+export default $1
+```
+
 ### `reduxmap`
 
 ```javascript
