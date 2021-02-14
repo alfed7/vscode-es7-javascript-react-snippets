@@ -4,6 +4,26 @@ All info about changes
 
 # Released
 
+[3.1.0] - 2020-12-18
+
+- Add couple of snippets and React 17 components
+
+[3.0.0] - 2020-09-11
+
+- Enable extension on workspaces (i.e. GitHub codespaces).
+
+[2.8.0] - 2020-06-06
+
+- Add few snippets for React-Native & Typescript
+
+[2.7.0] - 2020-03-11
+
+- Add few snippets for react-router
+
+[2.6.0] - 2020-02-23
+
+- Add `rnfs`.
+
 [2.5.0] - 2019-12-19
 
 - Add `imrs` and `imrse` to imports for functional components. Removed `tsrafc`.

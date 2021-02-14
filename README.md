@@ -1,8 +1,58 @@
 # VS Code ES7 React/Redux/React-Native/JS snippets
 
+[![Version](https://vsmarketplacebadge.apphb.com/version/dsznajder.es7-react-js-snippets.svg)](https://vsmarketplacebadge.apphb.com/version-short/dsznajder.es7-react-js-snippets.svg)
+[![Install](https://vsmarketplacebadge.apphb.com/installs/dsznajder.es7-react-js-snippets.svg)](https://vsmarketplacebadge.apphb.com/installs-short/dsznajder.es7-react-js-snippets.svg)
+[![Downloads](https://vsmarketplacebadge.apphb.com/downloads/dsznajder.es7-react-js-snippets.svg)](https://vsmarketplacebadge.apphb.com/downloads-short/dsznajder.es7-react-js-snippets.svg)
+[![Ratings](https://vsmarketplacebadge.apphb.com/rating-short/dsznajder.es7-react-js-snippets.svg)](https://vsmarketplacebadge.apphb.com/rating-short/dsznajder.es7-react-js-snippets.svg)
+
+This extension provides you JavaScript and React/Redux snippets in ES7 with Babel plugin features for [VS Code](https://code.visualstudio.com/)
+
+## Installation
+
+### Visual Studio Marketplace
+
+Launch _Quick Open_:
+
+- [_Linux_](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-linux.pdf): `Ctrl+P`
+- [_macOS_](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-macos.pdf): `⌘P`
+- [_Windows_](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf): `Ctrl+P`
+
+Paste the following command and press `Enter`:
+
+```shell
+ext install dsznajder.es7-react-js-snippets
+```
+
+### GitHub Repository Clone
+
+Change to your `.vscode/extensions` [VS Code extensions directory](https://code.visualstudio.com/docs/extensions/install-extension#_side-loading).
+Depending on your platform it is located in the following folders:
+
+- _Linux_: `~/.vscode/extensions`
+- _macOS_: `~/.vscode/extensions`
+- _Windows_: `%USERPROFILE%\.vscode\extensions`
+
+Clone the Material Theme repository as `dsznajder.es7-react-js-snippets`:
+
+```shell
+git clone https://github.com/dsznajder/vscode-es7-javascript-react-snippets.git dsznajder.es7-react-js-snippets
+```
+
+### Conquer of Completion
+
+It is possible to use this package in your vim/neovim text editor, to make this possible, make sure you have the `coc.nvim` previously configured, then add this command to your `init.vim`
+
+```shell
+Plug 'dsznajder/vscode-es7-javascript-react-snippets', { 'do': 'yarn install --frozen-lockfile && yarn compile' }
+```
+
+Update your vim / neovim settings with `:source %` and then install the new package with `:PlugInstall`
+
+Note: This example uses `vim-plug` as a package manager, feel free to use some other
+
 ## Search command
 
-You can search through snippets with `ES7 snippet search` command which can be run with `CMD + Shift + P` or just use `CMD + Shift + R` keybinding.
+You can search through snippets with `ES7 snippet search` command which can be run with `CMD + Shift + P` or just use `CMD + Shift + R` (`CTRL + ALT + R` for Windows & Linux) keybinding.
 
 ## Basic Methods
 
@@ -33,22 +83,28 @@ You can search through snippets with `ES7 snippet search` command which can be r
 
 ## React
 
-|      Prefix | Method                                                                              |
-| ----------: | ----------------------------------------------------------------------------------- |
-|      `imr→` | `import React from 'react'`                                                         |
-|     `imrd→` | `import ReactDOM from 'react-dom'`                                                  |
-|     `imrc→` | `import React, { Component } from 'react'`                                          |
-|    `imrcp→` | `import React, { Component } from 'react' & import PropTypes from 'prop-types'`     |
-|     `imrm→` | `import React, { memo } from 'react'`                                               |
-|    `imrmp→` | `import React, { memo } from 'react' & import PropTypes from 'prop-types'`          |
-|     `impt→` | `import PropTypes from 'prop-types'`                                                |
-|     `imrr→` | `import { BrowserRouter as Router, Route, Link } from 'react-router-dom'`           |
-|     `imrs→` | `import React, { useState } from 'react'`                                           |
-|    `imrse→` | `import React, { useState, useEffect } from 'react'`                                |
-|    `redux→` | `import { connect } from 'react-redux'`                                             |
-| `rcontext→` | `const ${1:contextName} = React.createContext()`                                    |
-|     `cref→` | `this.${1:refName}Ref = React.createRef()`                                          |
-|     `fref→` | `const ref = React.createRef()`                                                     |
+|      Prefix | Method                                                                          |
+| ----------: | ------------------------------------------------------------------------------- |
+|      `imr→` | `import React from 'react'`                                                     |
+|     `imrd→` | `import ReactDOM from 'react-dom'`                                              |
+|     `imrc→` | `import React, { Component } from 'react'`                                      |
+|    `imrcp→` | `import React, { Component } from 'react' & import PropTypes from 'prop-types'` |
+|     `imrm→` | `import React, { memo } from 'react'`                                           |
+|    `imrmp→` | `import React, { memo } from 'react' & import PropTypes from 'prop-types'`      |
+|     `impt→` | `import PropTypes from 'prop-types'`                                            |
+|     `imrr→` | `import { BrowserRouter as Router, Route, NavLink} from 'react-router-dom'`     |
+|     `imbr→` | `import { BrowserRouter as Router} from 'react-router-dom'`                     |
+|    `imbrc→` | `import { Route, Switch, NavLink, Link } from react-router-dom'`                |
+|    `imbrr→` | `import { Route } from 'react-router-dom'`                                      |
+|    `imbrs→` | `import { Switch } from 'react-router-dom'`                                     |
+|    `imbrl→` | `import { Link } from 'react-router-dom'`                                       |
+|   `imbrnl→` | `import { NavLink } from 'react-router-dom'`                                    |
+|     `imrs→` | `import React, { useState } from 'react'`                                       |
+|    `imrse→` | `import React, { useState, useEffect } from 'react'`                            |
+|    `redux→` | `import { connect } from 'react-redux'`                                         |
+| `rcontext→` | `const ${1:contextName} = React.createContext()`                                |
+|     `cref→` | `this.${1:refName}Ref = React.createRef()`                                      |
+|     `fref→` | `const ref = React.createRef()`                                                 |
 
 ## React Hooks
 
@@ -62,6 +118,7 @@ You can search through snippets with `ES7 snippet search` command which can be r
 |   `rxconst→` | `export const $1 = '$1'`  |
 | `rxreducer→` | `redux reducer template`  |
 |  `rxselect→` | `redux selector template` |
+|   `rxslice→` | `redux slice template`    |
 
 ## PropTypes
 
@@ -100,22 +157,19 @@ You can search through snippets with `ES7 snippet search` command which can be r
 
 ## GraphQL
 
-|`graphql→`|`import { compose, graphql } from 'react-apollo'`|
-
-### `expgql`
-
-```js
-export default compose(graphql($1, { name: $2 }))($3)
-```
+|     Prefix | Method                                                  |
+| ---------: | ------------------------------------------------------- |
+| `graphql→` | `import { compose, graphql } from react-apollo'`        |
+| `expgql->` | `export default compose(graphql($1, { name: $2 }))($3)` |
 
 ## Console
 
 | Prefix | Method                              |
 | -----: | ----------------------------------- |
 | `clg→` | `console.log(object)`               |
-| `clo→` | `console.log("object", object)`     |
-| `ctm→` | `console.time("timeId")`            |
-| `cte→` | `console.timeEnd("timeId")`         |
+| `clo→` | `` console.log(`object`, object) `` |
+| `ctm→` | `` console.time(`timeId`) ``        |
+| `cte→` | `` console.timeEnd(`timeId`) ``     |
 | `cas→` | `console.assert(expression,object)` |
 | `ccl→` | `console.clear()`                   |
 | `cco→` | `console.count(label)`              |
@@ -128,6 +182,112 @@ export default compose(graphql($1, { name: $2 }))($3)
 | `cin→` | `console.info`                      |
 
 ## React Components
+
+### Note for React 17 use `_` prefix. Currently workaround for future options.
+
+### `rcc`
+
+```javascript
+import React, { Component } from 'react'
+
+export default class FileName extends Component {
+  render() {
+    return <div>$2</div>
+  }
+}
+```
+
+### `rce`
+
+```javascript
+import React, { Component } from 'react'
+
+export class FileName extends Component {
+  render() {
+    return <div>$2</div>
+  }
+}
+
+export default $1
+```
+
+### `rcep`
+
+```javascript
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+
+export class FileName extends Component {
+  static propTypes = {}
+
+  render() {
+    return <div>$2</div>
+  }
+}
+
+export default $1
+```
+
+### `rpc`
+
+```javascript
+import React, { PureComponent } from 'react'
+
+export default class FileName extends PureComponent {
+  render() {
+    return <div>$2</div>
+  }
+}
+```
+
+### `rpcp`
+
+```javascript
+import React, { PureComponent } from 'react'
+import PropTypes from 'prop-types'
+
+export default class FileName extends PureComponent {
+  static propTypes = {}
+
+  render() {
+    return <div>$2</div>
+  }
+}
+```
+
+### `rpce`
+
+```javascript
+import React, { PureComponent } from 'react'
+import PropTypes from 'prop-types'
+
+export class FileName extends PureComponent {
+  static propTypes = {}
+
+  render() {
+    return <div>$2</div>
+  }
+}
+
+export default FileName
+```
+
+### `rccp`
+
+```javascript
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+
+export default class FileName extends Component {
+  static propTypes = {
+    $2: $3,
+  }
+
+  render() {
+    return <div>$4</div>
+  }
+}
+```
 
 ### `rfcp`
 
@@ -172,7 +332,7 @@ export default $1
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const $1 = props => {
+const $1 = (props) => {
   return <div>$0</div>
 }
 
@@ -206,15 +366,196 @@ export default $1
 ### `rafreduxp`
 
 ```javascript
-import React from 'react'
+import React, { memo } from 'react'
+import PropTypes from 'prop-types'
+
+const $1 = memo(function $1(props) {
+  return <div>$0</div>
+})
+
+$1.propTypes = {}
+
+export default $1
+```
+
+### `rcredux`
+
+```javascript
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+
+export class FileName extends Component {
+  render() {
+    return <div>$4</div>
+  }
+}
+
+const mapStateToProps = (state) => ({})
+
+const mapDispatchToProps = {}
+
+export default connect(mapStateToProps, mapDispatchToProps)(FileName)
+```
+
+### `rcreduxp`
+
+```javascript
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 
-const $1 = props => {
-  return <div>$0</div>
+export class FileName extends Component {
+  static propTypes = {
+    $2: $3,
+  }
+
+  render() {
+    return <div>$4</div>
+  }
 }
 
-$1.propTypes = {
+const mapStateToProps = (state) => ({})
+
+const mapDispatchToProps = {}
+
+export default connect(mapStateToProps, mapDispatchToProps)(FileName)
+```
+
+### `rfcredux`
+
+```javascript
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+
+export const FileName = () => {
+  return <div>$4</div>
+}
+
+const mapStateToProps = (state) => ({})
+
+const mapDispatchToProps = {}
+
+export default connect(mapStateToProps, mapDispatchToProps)(FileName)
+```
+
+### `rfreduxp`
+
+```javascript
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
+
+export const FileName = () => {
+  return <div>$4</div>
+}
+
+FileName.propTypes = {
+  $2: $3,
+}
+
+const mapStateToProps = (state) => ({})
+
+const mapDispatchToProps = {}
+
+export default connect(mapStateToProps, mapDispatchToProps)(FileName)
+```
+
+### `reduxmap`
+
+```javascript
+const mapStateToProps = (state) => ({})
+
+const mapDispatchToProps = {}
+```
+
+## React Native Components
+
+### `rnc`
+
+```javascript
+import React, { Component } from 'react'
+import { Text, View } from 'react-native'
+
+export default class FileName extends Component {
+  render() {
+    return (
+      <View>
+        <Text> $2 </Text>
+      </View>
+    )
+  }
+}
+```
+
+### `rnf`
+
+```javascript
+import React from 'react'
+import { View, Text } from 'react-native'
+
+export default function $1() {
+  return (
+    <View>
+      <Text> $2 </Text>
+    </View>
+  )
+}
+```
+
+### `rnfs`
+
+```javascript
+import React from 'react'
+import { StyleSheet, View, Text } from 'react-native'
+
+export default function $1() {
+  return (
+    <View>
+      <Text> $2 </Text>
+    </View>
+  )
+}
+
+const styles = StyleSheet.create({})
+```
+
+### `rnfe`
+
+```javascript
+import React from 'react'
+import { View, Text } from 'react-native'
+
+const $1 = () => {
+  return (
+    <View>
+      <Text> $2 </Text>
+    </View>
+  )
+}
+
+export default $1
+```
+
+### `rnfes`
+
+```javascript
+import React from 'react'
+import { StyleSheet, View, Text } from 'react-native'
+
+const $1 = () => {
+  return (
+    <View>
+      <Text> $2 </Text>
+    </View>
+  )
+}
+
+export default $1
+
+const styles = StyleSheet.create({})
+```
+
+### `rncs`
 
 }
 
@@ -226,15 +567,35 @@ const mapDispatchToProps = {
 
 export default connect(mapStateToProps, mapDispatchToProps)($1)
 export default $1
-```
+
+````
 
 ### `reduxmap`
 
 ```javascript
-const mapStateToProps = state => ({})
+import React, { Component } from 'react'
+import { View, Text } from 'react-native'
+import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
+
+export class FileName extends Component {
+  static propTypes = {
+    $2: $3,
+  }
+
+  render() {
+    return (
+      <View>
+        <Text> $2 </Text>
+      </View>
+    )
+  }
+}
+
+const mapStateToProps = (state) => ({})
 
 const mapDispatchToProps = {}
-```
+````
 
 ## Others
 
@@ -394,7 +755,7 @@ export default WrapperComponent => connect(mapStateToProps, mapDispatchToProps)(
 import React from 'react'
 import PropTypes from 'prop-types'
 
-export default WrappedComponent => {
+export default (WrappedComponent) => {
   const hocComponent = ({ ...props }) => <WrappedComponent {...props} />
 
   hocComponent.propTypes = {}
