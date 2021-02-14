@@ -1888,6 +1888,6 @@
   },
   "exportDestructingDefaultAs": {
     "prefix": "exda",
-    "body": "export { default as ${1:module}'$0 } from '${1:module}'$0"
+    "body": "export { default as ${1:module}$0 } from './${1:module}'$0"
   }
 }
