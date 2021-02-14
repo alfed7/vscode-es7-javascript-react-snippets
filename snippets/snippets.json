@@ -1850,5 +1850,43 @@
       "}",
       ""
     ]
+  },
+  "reactArrowFunctionComponentWithPropTypesAndJss": {
+    "prefix": "rafs",
+    "body": [
+      "import React from 'react'",
+      "import PropTypes from 'prop-types'",
+      "import { createUseStyles } from 'react-jss';",
+      "",
+      "let useStyles = createUseStyles((theme) => ({",
+      "\troot: {",
+      "\t},",
+      "}));",
+      "",
+      "const ${1:${TM_FILENAME_BASE}} = props => {",
+      "\tconst classes = useStyles();",
+      "\treturn (",
+      "\t\t<div className={classes.root}>",
+      "\t\t\t$0",
+      "\t\t</div>",
+      "\t)",
+      "}",
+      "",
+      "${1:${TM_FILENAME_BASE}}.propTypes = {",
+      "",
+      "}",
+      "",
+      "export default ${1:${TM_FILENAME_BASE}}",
+      ""
+    ],
+    "description": "Creates a React Arrow Function Component with ES7 module system with PropTypes"
+  },
+  "exportDestructingDefault": {
+    "prefix": "exdd",
+    "body": "export { default } from '${1:module}'$0"
+  },
+  "exportDestructingDefaultAs": {
+    "prefix": "exda",
+    "body": "export { default as ${1:module}'$0 } from '${1:module}'$0"
   }
 }
