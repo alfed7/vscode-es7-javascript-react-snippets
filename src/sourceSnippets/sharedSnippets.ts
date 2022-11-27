@@ -15,6 +15,10 @@ export const reactWithReduxConnect = [
   "import { connect } from 'react-redux'",
 ];
 
+export const reduxHooks = [
+  "import { useAppSelector, useAppDispatch } from 'redux/hooks';",
+];
+
 export const reactComponentWithReduxConnect = [
   "import React, { Component } from 'react'",
   "import { connect } from 'react-redux'",
@@ -46,6 +50,17 @@ export const innerComponentReturn = [
 ];
 
 export const exportDefault = ['', `export default ${Placeholders.FileName}`];
+
+export const propsInterface = [
+  `export interface I${Placeholders.FileName}Props {
+}`,
+];
+
+export const useSelector = ['const count = useAppSelector((state) => state)'];
+export const useDispatch = ['const dispatch = useAppDispatch()'];
+export const exportArrowWithProps = [
+  `export const ${Placeholders.FileName} = (props: I${Placeholders.FileName}Props) => {`,
+];
 
 export const propsTypeInterface = [Placeholders.TypeProps, ''];
 export const stateTypeInterface = [Placeholders.TypeState, ''];

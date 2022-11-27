@@ -116,7 +116,8 @@
   },
   "scripts": {
     "vscode:prepublish": "yarn compile",
-    "compile": "rm -rf lib; tsc -p ./ --noEmit false --module commonjs --outDir lib",
+    "compile": "del -f lib && tsc -p ./ --noEmit false --module commonjs --outDir lib",
+    "compile:l": "rm -rf lib; tsc -p ./ --noEmit false --module commonjs --outDir lib",
     "compile:dev": "rm -rf lib; tsc -p ./ --noEmit false --module commonjs --outDir lib",
     "lint": "eslint --ext .js,.ts,.tsx ./src/",
     "watch": "tsc -watch -p ./",

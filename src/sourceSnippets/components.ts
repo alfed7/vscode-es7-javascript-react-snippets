@@ -1,9 +1,11 @@
 import { Placeholders, SnippetMapping } from '../types';
 
 import {
+  exportArrowWithProps,
   exportDefault,
   innerComponent,
   innerComponentReturn,
+  propsInterface,
   react,
   reactComponent,
   reactComponentWithReduxConnect,
@@ -12,11 +14,15 @@ import {
   reactWithMemo,
   reactWithReduxConnect,
   reduxComponentExport,
+  reduxHooks,
+  useDispatch,
+  useSelector,
 } from './sharedSnippets';
 
 type ComponentMappings = {
   reactArrowFunctionComponent: 'rafc';
   reactArrowFunctionComponentWithPropTypes: 'rafcp';
+  reactArrowFunctionComponentWithPropTypesRedux: 'rafcpredux';
   reactArrowFunctionExportComponent: 'rafce';
   reactClassComponentPropTypes: 'rccp';
   reactClassComponentRedux: 'rcredux';
@@ -146,17 +152,34 @@ const reactArrowFunctionComponentWithPropTypes: ComponentsSnippet = {
   key: 'reactArrowFunctionComponentWithPropTypes',
   prefix: 'rafcp',
   body: [
-    ...reactPropTypes,
+    ...propsInterface,
     '',
-    `const ${Placeholders.FileName} = props => {`,
+    `export const ${Placeholders.FileName} = (props: I${Placeholders.FileName}Props) => {`,
     ...innerComponent,
     '}',
     '',
-    `${Placeholders.FileName}.propTypes = {}`,
     ...exportDefault,
   ],
   description:
     'Creates a React Arrow Function Component with ES7 module system with PropTypes',
+};
+
+const reactArrowFunctionComponentWithPropTypesRedux: ComponentsSnippet = {
+  key: 'reactArrowFunctionComponentWithPropTypesRedux',
+  prefix: 'rafcpredux',
+  body: [
+    ...reduxHooks,
+    ...propsInterface,
+    '',
+    ...exportArrowWithProps,
+    ...useSelector,
+    ...useDispatch,
+    ...innerComponent,
+    '}',
+    ...exportDefault,
+  ],
+  description:
+    'Creates a React functional component with connected redux and ES7 module system',
 };
 
 const reactClassExportComponentWithPropTypes: ComponentsSnippet = {
@@ -345,6 +368,7 @@ const reactFunctionalComponentReduxPropTypes: ComponentsSnippet = {
 export default [
   reactArrowFunctionComponent,
   reactArrowFunctionComponentWithPropTypes,
+  reactArrowFunctionComponentWithPropTypesRedux,
   reactArrowFunctionExportComponent,
   reactClassComponent,
   reactClassComponentPropTypes,

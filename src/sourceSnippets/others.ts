@@ -20,10 +20,13 @@ type OthersMapping = {
   destructingObject: 'dob';
   emptyState: 'est';
   exportAs: 'exa';
+  exportDefaultAs: 'exda';
   exportDefault: 'exp';
   exportDefaultFunction: 'edf';
   exportDefaultNamedFunction: 'ednf';
   exportDestructing: 'exd';
+  exportDefaultDestructing: 'exdd';
+  exportDefaultComponent: 'exdc';
   exportNamedFunction: 'enf';
   forEach: 'fre';
   forIn: 'fin';
@@ -59,11 +62,31 @@ const exportDestructing: OthersSnippet = {
   ],
 };
 
+const exportDefaultDestructing: OthersSnippet = {
+  key: 'exportDefaultDestructing',
+  prefix: 'exdd',
+  body: [`export { default } from '${Placeholders.FirstTab}'`],
+};
+
+const exportDefaultComponent: OthersSnippet = {
+  key: 'exportDefaultComponent',
+  prefix: 'exdc',
+  body: [`export default { component: ${Placeholders.FileName} }`],
+};
+
 const exportAs: OthersSnippet = {
   key: 'exportAs',
   prefix: 'exa',
   body: [
     `export { ${Placeholders.SecondTab} as ${Placeholders.ThirdTab} } from '${Placeholders.FirstTab}'`,
+  ],
+};
+
+const exportDefaultAs: OthersSnippet = {
+  key: 'exportDefaultAs',
+  prefix: 'exda',
+  body: [
+    `export { default as ${Placeholders.SecondTab} } from '${Placeholders.FirstTab}'`,
   ],
 };
 
@@ -414,6 +437,9 @@ export default [
   exportNamedFunction,
   exportDefaultFunction,
   exportDefaultNamedFunction,
+  exportDefaultDestructing,
+  exportDefaultComponent,
+  exportDefaultAs,
   method,
   propertyGet,
   propertySet,
