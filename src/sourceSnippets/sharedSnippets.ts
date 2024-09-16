@@ -2,6 +2,7 @@ import { Placeholders } from '../types';
 
 export const reactComponent = ["import React, { Component } from 'react'"];
 export const react = ["import React from 'react'"];
+export const fragment = ["import { Fragment } from 'react'"];
 export const reactPureComponent = [
   "import React, { PureComponent } from 'react'",
 ];
@@ -38,6 +39,11 @@ export const reduxComponentExport = [
 export const innerComponent = [
   '  return (',
   `    <div>${Placeholders.FirstTab}</div>`,
+  '  )',
+];
+export const innerComponentFragment = [
+  '  return (',
+  `    <Fragment>${Placeholders.FirstTab}</Fragment>`,
   '  )',
 ];
 

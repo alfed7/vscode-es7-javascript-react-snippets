@@ -116,12 +116,12 @@
   },
   "scripts": {
     "vscode:prepublish": "yarn compile",
-    "compile": "del -f lib && tsc -p ./ --noEmit false --module commonjs --outDir lib",
-    "compile:l": "rm -rf lib; tsc -p ./ --noEmit false --module commonjs --outDir lib",
+    "compile": "rimraf lib && tsc -p ./ --noEmit false --module commonjs --outDir lib",
     "compile:dev": "rm -rf lib; tsc -p ./ --noEmit false --module commonjs --outDir lib",
     "lint": "eslint --ext .js,.ts,.tsx ./src/",
     "watch": "tsc -watch -p ./",
-    "typescript": "tsc --noEmit"
+    "typescript": "tsc --noEmit",
+    "gen": "ts-node ./src/gen.ts"
   },
   "dependencies": {
     "prettier": "2.5.1"
@@ -147,7 +147,9 @@
     "eslint-plugin-prettier": "4.0.0",
     "eslint-plugin-simple-import-sort": "7.0.0",
     "prettier": "2.5.1",
-    "typescript": "4.5.5"
+    "typescript": "4.5.5",
+    "rimraf": "^3.0.2",
+    "ts-node": "^10.9.2"
   },
   "prettier": {
     "bracketSameLine": false,

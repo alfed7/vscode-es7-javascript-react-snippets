@@ -20,6 +20,7 @@ type OthersMapping = {
   destructingObject: 'dob';
   emptyState: 'est';
   exportAs: 'exa';
+  exportAll: 'exl';
   exportDefaultAs: 'exda';
   exportDefault: 'exp';
   exportDefaultFunction: 'edf';
@@ -80,6 +81,12 @@ const exportAs: OthersSnippet = {
   body: [
     `export { ${Placeholders.SecondTab} as ${Placeholders.ThirdTab} } from '${Placeholders.FirstTab}'`,
   ],
+};
+
+const exportAll: OthersSnippet = {
+  key: 'exportAll',
+  prefix: 'exl',
+  body: [`export * from './${Placeholders.FirstTab}'`],
 };
 
 const exportDefaultAs: OthersSnippet = {
@@ -434,6 +441,7 @@ export default [
   exportDefault,
   exportDestructing,
   exportAs,
+  exportAll,
   exportNamedFunction,
   exportDefaultFunction,
   exportDefaultNamedFunction,
